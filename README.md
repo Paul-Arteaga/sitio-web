@@ -1,2 +1,2 @@
 # sitio-web
-primer sitio wied de modelos y optimizacion
+primer sitio wieb de modelos y optimizacion
