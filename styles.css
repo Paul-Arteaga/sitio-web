@@ -1,14 +1,119 @@
-body {
+body.login-body {
     margin: 0;
     padding: 0;
-    background-image: url('motorcycle-6959500_1280.jpg'); /* Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-position: center; /* Centra la imagen en el fondo */
-    font-family: Arial, sans-serif; /* Establece la fuente del texto */
+    background-image: url('motorcycle-6959500_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
 }
 
 .container {
     text-align: center;
     padding: 100px;
-    color: white; /* Color del texto en el contenedor */
+    color: white;
 }
+
+.opciones-container {
+    position: relative;
+    display: inline-block;
+}
+
+.opciones {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0); /* Fondo rojo claro con 80% de transparencia */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #00000000;
+    border-radius: 4px;
+}
+
+.opcionBtn {
+    margin-bottom: 10px;
+    background-color: rgb(42, 42, 66);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(199, 202, 0);
+    /* border: rgb(226, 1, 1); */
+    border-radius: 40px;
+    padding: 10px 40px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.opcionBtn:hover,
+#mostrarBtn:hover {
+    background-color: rgb(71, 29, 119);
+    cursor: pointer;
+}
+
+.opciones-container:hover .opciones {
+    display: block;
+}
+#carrito-link {
+    background-color: black;
+    color: white;
+}
+
+/* Estilo para el enlace "TIENDA" */
+a#tienda-link {
+    background-color: black;
+    color: white;
+}
+
+a#tienda-link:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Estilo para el enlace "CARRITO" */
+a#carrito-link {
+    background-color: black;
+    color: white;
+}
+
+a#carrito-link:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Estilo para el enlace "MIS COMPRAS" */
+a#mis-compras-link {
+    background-color: black;
+    color: white;
+}
+
+a#mis-compras-link:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Estilo para el enlace "PEDIDOS" */
+a#pedidos-link {
+    background-color: black;
+    color: white;
+}
+
+a#pedidos-link:hover {
+    background-color: gray;
+    color: white;
+}
+/* Estilos específicos para los botones "Añadir al carrito" */
+#botonAñadircarrito {
+    margin-top: 2px;
+    background-color: #00203a;
+    color: #fff;
+    padding: 8px 80px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap; /* Evitar que el texto se divida en líneas */
+  text-align: center; /* Alinear el texto al centro si es necesario */
+  }
+  
+  #botonAñadircarrito:hover {
+    background-color: #2779bd;
+  }
+  
