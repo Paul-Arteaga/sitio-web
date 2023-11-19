@@ -27,10 +27,14 @@ function irAMenuPrincipal() {
 function salir() {
     window.location.href = "index.html";
 }
-function agregarAlCarrito(event) {
-    // Lógica de la función para añadir al carrito
-    console.log("Producto añadido al carrito");
-    // Evitar que el enlace href se siga
-    event.preventDefault();
-  }
+// script.js
+
+function agregarAlCarrito(nombre, precio) {
+    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push({ nombre: nombre, precio: precio });
+    localStorage.setItem('carrito', JSON.stringify(carrito));
   
+    alert('Producto agregado al carrito');
+  }
+
+ 
