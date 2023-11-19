@@ -121,4 +121,7 @@ a#pedidos-link:hover {
     background-color: transparent; /* Puedes ajustar esto según tu diseño */
     display: inline-block;
   }
+  #map {
+    height: 100%;
+  }
   
