@@ -82,23 +82,28 @@ function initMap() {
 
     // Esperar a que la API de Google Maps se cargue completamente
     google.maps.event.addDomListenerOnce(window, 'load', function () {
-      // Verificar si la librería de marcadores avanzados está disponible
-      if (typeof google.maps.marker !== 'undefined' && typeof google.maps.marker.AdvancedMarkerView === 'function') {
-        const { Map, AdvancedMarkerView } = google.maps;
+      // Verificar si la librería de Google Maps está disponible
+      if (google.maps) {
+        // Verificar la disponibilidad del objeto AdvancedMarkerView
+        if (google.maps.marker && google.maps.marker.AdvancedMarkerView) {
+          const { Map, marker } = google.maps;
 
-        map = new Map(document.getElementById("map"), {
-          zoom: 14,
-          center: position,
-          mapId: "DEMO_MAP_ID",
-        });
+          map = new Map(document.getElementById("map"), {
+            zoom: 14,
+            center: position,
+            mapId: "DEMO_MAP_ID",
+          });
 
-        const marker = new AdvancedMarkerView({
-          map: map,
-          position: position,
-          title: "My location",
-        });
+          const advancedMarker = new marker.AdvancedMarkerView({
+            map: map,
+            position: position,
+            title: "My location",
+          });
+        } else {
+          console.error('Error: La librería de marcadores avanzados no está disponible.');
+        }
       } else {
-        console.error('Error: La librería de marcadores avanzados no está disponible.');
+        console.error('Error: La librería de Google Maps no está disponible.');
       }
     });
   } catch (error) {
