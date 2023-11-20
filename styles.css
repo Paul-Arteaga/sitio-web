@@ -121,4 +121,14 @@ a#pedidos-link:hover {
     background-color: transparent; /* Puedes ajustar esto según tu diseño */
     display: inline-block;
   }
+<<<<<<< HEAD
   
+  #map {
+    height: 100%;
+  }
+=======
+  #map {
+    height: 100%;
+  }
+  
+>>>>>>> 44e2b0df2e7c4f55140c717bb395f4ca9b076221
