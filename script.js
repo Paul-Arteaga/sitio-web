@@ -38,7 +38,7 @@ function agregarAlCarrito(nombre, precio) {
   }
 
 
-// script.js
+/* // script.js
 
 let map;
 
@@ -65,6 +65,40 @@ function initMap() {
         });
       } else {
         console.error('Error: La librería de Google Maps no está disponible.');
+      }
+    });
+  } catch (error) {
+    console.error('Error al inicializar el mapa:', error);
+  }
+}
+ */
+// script.js
+
+let map;
+
+function initMap() {
+  try {
+    const position = { lat: -17.802631378173828, lng: -63.171173095703125 };
+
+    // Esperar a que la API de Google Maps se cargue completamente
+    google.maps.event.addDomListenerOnce(window, 'load', function () {
+      // Verificar si la librería de marcadores avanzados está disponible
+      if (typeof google.maps.marker !== 'undefined' && typeof google.maps.marker.AdvancedMarkerView === 'function') {
+        const { Map, AdvancedMarkerView } = google.maps;
+
+        map = new Map(document.getElementById("map"), {
+          zoom: 14,
+          center: position,
+          mapId: "DEMO_MAP_ID",
+        });
+
+        const marker = new AdvancedMarkerView({
+          map: map,
+          position: position,
+          title: "My location",
+        });
+      } else {
+        console.error('Error: La librería de marcadores avanzados no está disponible.');
       }
     });
   } catch (error) {
