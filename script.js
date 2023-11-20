@@ -38,11 +38,6 @@ function agregarAlCarrito(nombre, precio) {
   }
 
 
-
-
-
-  
-
 // Initialize and add the map
 let map;
 
@@ -69,5 +64,3 @@ async function initMap() {
     title: "Uluru",
   });
 }
-
-initMap();
