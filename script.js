@@ -80,33 +80,31 @@ function initMap() {
   try {
     const position = { lat: -17.802631378173828, lng: -63.171173095703125 };
 
-    // Esperar a que la API de Google Maps se cargue completamente
-    google.maps.event.addDomListenerOnce(window, 'load', function () {
-      // Verificar si la librería de Google Maps está disponible
-      if (google.maps) {
-        const { Map, Marker } = google.maps;
+    // Verificar si la API de Google Maps está disponible
+    if (google && google.maps) {
+      const { Map, Marker } = google.maps;
 
-        map = new Map(document.getElementById("map"), {
-          zoom: 14,
-          center: position,
-          mapId: "DEMO_MAP_ID",
-        });
+      // Crear el mapa
+      map = new Map(document.getElementById("map"), {
+        zoom: 14,
+        center: position,
+        mapId: "DEMO_MAP_ID",
+      });
 
-        const marker = new Marker({
-          map: map,
-          position: position,
-          title: "My location",
-          label: {
-            text: "My location",
-            color: "white",
-          },
-        });
-      } else {
-        console.error('Error: La librería de Google Maps no está disponible.');
-      }
-    });
+      // Crear el marcador
+      const marker = new Marker({
+        map: map,
+        position: position,
+        title: "My location",
+        label: {
+          text: "My location",
+          color: "white",
+        },
+      });
+    } else {
+      console.error('Error: La API de Google Maps no está disponible.');
+    }
   } catch (error) {
     console.error('Error al inicializar el mapa:', error);
   }
 }
-
