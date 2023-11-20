@@ -38,14 +38,29 @@ function agregarAlCarrito(nombre, precio) {
   }
 
 
-
-
 // script.js
 
-function initMap() {
-    // Puedes dejar esta función vacía por ahora
-    // o agregar cualquier lógica necesaria para la inicialización del mapa
+let map;
+
+async function initMap() {
+  try {
+    const position = { lat: -17.802631378173828, lng: -63.171173095703125 };
+
+    // Cargar la librería de mapas y marcadores
+    const { Map, AdvancedMarkerView } = await google.maps.importLibrary("maps", "marker");
+
+    map = new Map(document.getElementById("map"), {
+      zoom: 14,
+      center: position,
+      mapId: "DEMO_MAP_ID",
+    });
+
+    const marker = new AdvancedMarkerView({
+      map: map,
+      position: position,
+      title: "My location",
+    });
+  } catch (error) {
+    console.error('Error al inicializar el mapa:', error);
   }
-  
-  // Resto de tu código...
-  
+}
