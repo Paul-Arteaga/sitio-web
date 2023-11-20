@@ -40,3 +40,12 @@ function agregarAlCarrito(nombre, precio) {
 
 
 
+// script.js
+
+function initMap() {
+    // Puedes dejar esta función vacía por ahora
+    // o agregar cualquier lógica necesaria para la inicialización del mapa
+  }
+  
+  // Resto de tu código...
+  
