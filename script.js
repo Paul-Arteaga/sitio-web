@@ -108,3 +108,4 @@ function initMap() {
     console.error('Error al inicializar el mapa:', error);
   }
 }
+
