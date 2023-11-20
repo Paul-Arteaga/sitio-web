@@ -126,3 +126,13 @@ a#pedidos-link:hover {
   #map {
     height: 800px;
   }
+
+  #miNav {
+    /* Estilos específicos para el nav en la página de inicio */
+    margin-bottom: -100px; /* Ajusta según sea necesario */
+}
+
+#viewerButton {
+    margin-top: 80px; /* Ajusta según sea necesario */
+  }
+  
