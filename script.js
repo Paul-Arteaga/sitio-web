@@ -38,27 +38,35 @@ function agregarAlCarrito(nombre, precio) {
   }
 
 
+
 // script.js
 
 let map;
 
-async function initMap() {
+function initMap() {
   try {
     const position = { lat: -17.802631378173828, lng: -63.171173095703125 };
 
-    // Cargar la librería de mapas y marcadores
-    const { Map, AdvancedMarkerView } = await google.maps.importLibrary("maps", "marker");
+    // Esperar a que la API de Google Maps se cargue completamente
+    google.maps.event.addDomListenerOnce(window, 'load', function () {
+      // Verificar si la librería de marcadores avanzados está disponible
+      if (typeof google.maps.marker !== 'undefined' && typeof google.maps.marker.AdvancedMarkerView === 'function') {
+        const { Map, AdvancedMarkerView } = google.maps;
 
-    map = new Map(document.getElementById("map"), {
-      zoom: 14,
-      center: position,
-      mapId: "DEMO_MAP_ID",
-    });
+        map = new Map(document.getElementById("map"), {
+          zoom: 14,
+          center: position,
+          mapId: "DEMO_MAP_ID",
+        });
 
-    const marker = new AdvancedMarkerView({
-      map: map,
-      position: position,
-      title: "My location",
+        const marker = new AdvancedMarkerView({
+          map: map,
+          position: position,
+          title: "My location",
+        });
+      } else {
+        console.error('Error: La librería de marcadores avanzados no está disponible.');
+      }
     });
   } catch (error) {
     console.error('Error al inicializar el mapa:', error);
