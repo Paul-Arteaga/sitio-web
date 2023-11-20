@@ -84,24 +84,23 @@ function initMap() {
     google.maps.event.addDomListenerOnce(window, 'load', function () {
       // Verificar si la librería de Google Maps está disponible
       if (google.maps) {
-        // Verificar la disponibilidad del objeto AdvancedMarkerView
-        if (google.maps.marker && google.maps.marker.AdvancedMarkerView) {
-          const { Map, marker } = google.maps;
+        const { Map, Marker } = google.maps;
 
-          map = new Map(document.getElementById("map"), {
-            zoom: 14,
-            center: position,
-            mapId: "DEMO_MAP_ID",
-          });
+        map = new Map(document.getElementById("map"), {
+          zoom: 14,
+          center: position,
+          mapId: "DEMO_MAP_ID",
+        });
 
-          const advancedMarker = new marker.AdvancedMarkerView({
-            map: map,
-            position: position,
-            title: "My location",
-          });
-        } else {
-          console.error('Error: La librería de marcadores avanzados no está disponible.');
-        }
+        const marker = new Marker({
+          map: map,
+          position: position,
+          title: "My location",
+          label: {
+            text: "My location",
+            color: "white",
+          },
+        });
       } else {
         console.error('Error: La librería de Google Maps no está disponible.');
       }
@@ -110,3 +109,4 @@ function initMap() {
     console.error('Error al inicializar el mapa:', error);
   }
 }
+
