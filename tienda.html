@@ -9,18 +9,8 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <title>pagina de optimizacion de datos</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     </head>
     <body>
-     
-        <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
 <div class="min-h-full">
     <nav id="miNav" class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -30,22 +20,8 @@
               <img class="h-8 w-8" src="sc.jpg" alt="Your Company">
             </div>
             <div class="hidden md:block">
-
-              
-
               <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                
-                
-                <!-- <a button id="mostrarBtn" onclick="toggleOpciones()" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Mostrar/Ocultar Opciones</a>
-
-                <div id="opciones" class="opciones">
-                  <button class="opcionBtn" onclick="irAMenuPrincipal()">Ir a Menú Principal</button>
-                  <button class="opcionBtn" onclick="irAConfigurar()">Ir a Configurar</button>
-                  <button class="opcionBtn" onclick="salir()">Salir</button>
-              </div> -->
               <a id="mostrarBtn" onclick="toggleOpciones()" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">MAS OPCIONES</a>
-
               <div id="opcionesContainer" class="opciones-container">
                   <div id="opciones" class="opciones">
                       <button class="opcionBtn" onclick="irAMenuPrincipal()">Ir a Menú Principal</button>
@@ -53,9 +29,6 @@
                       <button class="opcionBtn" onclick="salir()">Salir</button>
                   </div>
               </div>
-
-
-
               <a href="tienda.html" id="tienda-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">TIENDA</a>
               <a href="carrito.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CARRITO</a>
               <a href="compras.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">MIS COMPRAS</a>
@@ -72,7 +45,6 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                 </svg>
               </button>
-  
               <!-- Profile dropdown -->
               <div class="relative ml-3">
                 <div>
@@ -82,29 +54,51 @@
                     <img class="h-8 w-8 rounded-full" src="santa cruz.jpg" alt="">
                   </button>
                 </div>
-  
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-  
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-                
               </div>
             </div>
-          </div>
-          
-    </nav>
-
-
-
-  
-    <!-- Ventana emergente -->
+          </div>   
+    </nav> 
     <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
+      <div id="popupButton" class="hidden w-full flex justify-center">
+        <button onclick="showPopup()" class="bg-white text-indigo-600 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 py-5 px-10 font-semibold">Seguir comprando</button>
+      </div>
+      <div id="popupContainer" class="lg:p-10 md:p-6 p-4 bg-white dark:bg-gray-900 hidden">
+        <div id="closeboton" class="flex justify-end">
+          <button onclick="closePopup()" aria-label="Close" class="focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <svg class="dark:text-white" width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.8799 15.9996L23.6133 10.2796C23.8643 10.0285 24.0054 9.688 24.0054 9.33293C24.0054 8.97786 23.8643 8.63733 23.6133 8.38626C23.3622 8.13519 23.0217 7.99414 22.6666 7.99414C22.3115 7.99414 21.971 8.13519 21.7199 8.38626L15.9999 14.1196L10.2799 8.38626C10.0288 8.13519 9.68832 7.99414 9.33325 7.99414C8.97818 7.99414 8.63766 8.13519 8.38659 8.38626C8.13551 8.63733 7.99446 8.97786 7.99446 9.33293C7.99446 9.688 8.13551 10.0285 8.38659 10.2796L14.1199 15.9996L8.38659 21.7196C8.26161 21.8435 8.16242 21.991 8.09473 22.1535C8.02704 22.316 7.99219 22.4902 7.99219 22.6663C7.99219 22.8423 8.02704 23.0166 8.09473 23.179C8.16242 23.3415 8.26161 23.489 8.38659 23.6129C8.51054 23.7379 8.658 23.8371 8.82048 23.9048C8.98296 23.9725 9.15724 24.0073 9.33325 24.0073C9.50927 24.0073 9.68354 23.9725 9.84602 23.9048C10.0085 23.8371 10.156 23.7379 10.2799 23.6129L15.9999 17.8796L21.7199 23.6129C21.8439 23.7379 21.9913 23.8371 22.1538 23.9048C22.3163 23.9725 22.4906 24.0073 22.6666 24.0073C22.8426 24.0073 23.0169 23.9725 23.1794 23.9048C23.3418 23.8371 23.4893 23.7379 23.6133 23.6129C23.7382 23.489 23.8374 23.3415 23.9051 23.179C23.9728 23.0166 24.0077 22.8423 24.0077 22.6663C24.0077 22.4902 23.9728 22.316 23.9051 22.1535C23.8374 22.9910 23.7382 21.8435 23.6133 21.7196L17.8799 15.9996Z" fill="white" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-3 md:mt-4 lg:mt-0 flex flex-col lg:flex-row items-strech justify-center lg:space-x-8">
+          
+              <!-- imagen de la ventana flotante -->
+              <img src="ftsKing/8-pack-familiar-930x513-1.png" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Función para mostrar la ventana emergente
+      function showPopup() {
+        // Muestra el contenedor con el ID popupContainer
+        document.getElementById('popupContainer').classList.remove('hidden');
+      }
+    
+      // Función para cerrar la ventana emergente
+      function closePopup() {
+        // Oculta el contenedor con el ID popupContainer
+        document.getElementById('popupContainer').classList.add('hidden');
+      }
+    
+      // Muestra la ventana emergente cuando la página ha cargado
+      document.addEventListener('DOMContentLoaded', function () {
+        showPopup();
+      });
+    </script>
+    <!-- Ventana emergente -->
+    <div id="menus" class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
       <div id="viewerButton" class="hidden w-full flex justify-center">
         <button onclick="openView()" class="bg-white text-indigo-600 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 py-5 px-10 font-semibold">Seguir comprando</button>
       </div>
@@ -119,46 +113,205 @@
         <div class="mt-3 md:mt-4 lg:mt-0 flex flex-col lg:flex-row items-strech justify-center lg:space-x-8">
           <div class="lg:w-1/2 flex justify-between items-strech bg-gray-50  px-2 py-20 md:py-6 md:px-6 lg:py-24">
             <div class="flex items-center">
-              <button onclick="goPrev()" aria-label="slide back" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100">
-                <svg class="w-10 h-10 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M40 16L24 32L40 48" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <div class="slider">
-              <div class="slide-ana lg:relative">
-                <div class="flex" style="transform: translateX(-100%)">
-                  <img src="https://i.ibb.co/fMGD6ZC/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-3-1.png" alt="A black chair with wooden legs" class="w-full h-full" />
-                </div>
-                <div class="flex" style="transform: translateX(0%)">
-                  <img src="https://i.ibb.co/fMGD6ZC/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-3-1.png" alt="A black chair with wooden legs" class="w-full h-full" />
-                </div>
-                <div class="flex" style="transform: translateX(100%)">
-                  <img src="https://i.ibb.co/fMGD6ZC/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-3-1.png" alt="A black chair with wooden legs" class="w-full h-full" />
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center">
-              <button onclick="goNext()" aria-label="slide forward" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100">
-                <svg class="w-10 h-10 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 16L40 32L24 48" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+              <!-- imagen de la ventana flotante -->
+              <img src="ftsRes/Burger.png" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            
             </div>
           </div>
           <div class="lg:w-1/2 flex flex-col justify-center mt-7 md:mt-8 lg:mt-0 pb-8 lg:pb-0">
-            <h1 id="productTitle" class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Product Title</h1>
-            <p class="text-base leading-normal text-gray-600 dark:text-white mt-2">Product description goes here.</p>
+            <h1  class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Burguer king</h1>
+            <p class="text-base leading-normal text-gray-600 dark:text-white mt-2">Una nueva y extremadamente deliciosa hamburguesa de la colección The Kings</p>
             <p id="productPrice" class="text-3xl font-medium text-gray-600 dark:text-white mt-8 md:mt-10"></p>
             <div class="flex items-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8 mt-8 md:mt-16">
               <button class="w-full md:w-3/5 border border-gray-800 text-base font-medium leading-none text-white uppercase py-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 text-white dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">Add to Cart</button>
               <button class="w-full md:w-2/5 border border-gray-800 text-base font-medium leading-none text-gray-800 dark:text-white uppercase py-6 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-transparent dark:border-white dark:text-white focus:ring-gray-800 hover:bg-gray-800 hover:text-white dark:hover:bg-gray-800 ">View Details</button>
             </div>
+            
             <div class="mt-6">
               <button class="text-xl underline text-gray-800 dark:text-white dark:hover:text-gray-200 capitalize hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">Add to Wishlist</button>
             </div>
           </div>
         </div>
+          <br>
+          <h1 id="subBk" class="mt-1 text-lg font-medium text-gray-900">A la Parrilla</h1><br>
+        
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+           
+          <a href="#" class="group" title="XT STEAKHOUSE" onclick="agregarProducto('ftsKing/AlaParrilla/edit.png', 'XT STEAKHOUSE', 12, 'Hamburguesa simple con queso, tocino picado y ensalada', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit.png" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+          </a>
+        
+          <a href="#" class="group" title="Crunchy King Swiss" onclick="agregarProducto('ftsKing/AlaParrilla/edit2.png', 'Crunchy King Swiss', 14, 'Hamburguesa Doble Con Queso, Tocino Y Ensalada', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit2.png" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+          </a>
+          <a href="#" class="group" title="Bacon King Doble" onclick="agregarProducto('ftsKing/AlaParrilla/edit3.png', 'Bacon King Doble', 20, 'Bk Doble Carne, Doble Queso Y Tocino', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit3.png" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+          </a>
+          <a href="#" class="group" title="Big King" onclick="agregarProducto('ftsKing/AlaParrilla/edit4.png', 'Big King', 22, 'Hamburguesa Doble Con Queso, Tocino Y Ensalada', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit4.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+          </a>
+
+          </a>
+          <a href="#" class="group" title="Staker" onclick="agregarProducto('ftsKing/AlaParrilla/edit5.png', 'Staker', 25, '4 Carnes Con 4 Quesos Y Tocino', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit5.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+         </a>
+        </a>
+        <a href="#" class="group" title="Rodeo" onclick="agregarProducto('ftsKing/AlaParrilla/edit6.png', 'Rodeo', 16, 'Hamburguesa Simple Con Aros De Cebolla', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit6.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+        </a>
+        <a href="#" class="group" title="Napolitana" onclick="agregarProducto('ftsKing/AlaParrilla/edit7.png', 'Napolitana', 19, 'Hamburguesa Simple Con Tomate', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit7.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+</a>
+<a href="#" class="group" title="Long Rodeo" onclick="agregarProducto('ftsKing/AlaParrilla/edit8.png', 'Long Rodeo', 21, 'Hamburguesa Simple Con Aros de Cebolla', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit8.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+         </a>
+         <a href="#" class="group" title="WHOPPER Jr" onclick="agregarProducto('ftsKing/AlaParrilla/edit9.png', 'WHOPPER Jr', 20, 'Hamburguesa Simple Con Ensalada', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit9.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+        </a>
+       
+         <a href="#" class="group" title="Cuarto De Libra King Doble" onclick="agregarProducto('ftsKing/AlaParrilla/edit12.png', 'Cuarto De Libra King Doble', 26, '2 Hamburguesa Cuarto De Libra Con Queso Y Ensalada ', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit12.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+        </a>
+        
+       <a href="#" class="group" title="WHOPPER Con Queso" onclick="agregarProducto('ftsKing/AlaParrilla/edit15.png', 'WHOPPER Con Queso', 19, 'Hamburguesa Cuarto de Libra Con Extra Queso Y Ensalada', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/AlaParrilla/edit15.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+         </a>
+         </div>
+          <br>
+          
+          <h1 id="subBk" class="mt-1 text-lg font-medium text-gray-900">Combos de pollo</h1><br>
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        
+            <a href="#" class="group" title="BK Nuggets" onclick="agregarProducto('ftsKing/cmbspollo/edit21.png', 'BK Nuggets', 24, '10 Piezas De Nuggets Con Soda Y Papa', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/cmbspollo/edit21.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            
+         </a>
+         <a href="#" class="group" title="Pollo Frito" onclick="agregarProducto('ftsKing/cmbspollo/edit22.png', 'Pollo Frito', 24, '3 Presas De Pollo Con Soda Y Papas', event)">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsKing/cmbspollo/edit22.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+          </a>
+        </div>
+            <br>
+            <h1 id="subBk" class="mt-1 text-lg font-medium text-gray-900">King Jr</h1><br>
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+              <a href="#" class="group" title="King Jr.Nuggets" onclick="agregarProducto('ftsKing/kingyunior/edit30.png', 'King Jr.Nuggets', 14, '6 Piezas De Nuggets', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/kingyunior/edit30.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              
+           </a>
+           <a href="#" class="group" title="Combo Jr.Hamburguesa Con Queso" onclick="agregarProducto('ftsKing/kingyunior/edit31.png', 'Combo Jr.Hamburguesa Con Queso', 19, 'Hamburguesa Simple Con Papa Y Soda', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/kingyunior/edit31.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+
+            </a>
+              
+            </div><br>
+          <h1 id="subBk" class="mt-1 text-lg font-medium text-gray-900">Acompañamiento</h1><br>
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <a href="#" class="group" title="Aros De Cebolla" onclick="agregarProducto('ftsKing/acompañamientosk/edit42.png', 'Aros De Cebolla', 5, '150 Gr De Aros De Cebolla', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/acompañamientosk/edit42.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              
+           </a>
+           <a href="#" class="group" title="Papas Supremas" onclick="agregarProducto('ftsKing/acompañamientosk/edit40.png', 'Papas Supremas', 9, '300 Gr De Papas Supremas', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/acompañamientosk/edit40.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+
+            </a>
+          </a>
+          <a href="#" class="group" title="Papas Fritas" onclick="agregarProducto('ftsKing/acompañamientosk/edit41.png', 'Papas Fritas', 10, '300 Gr De Papas Fritas', event)">
+                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                  <img src="ftsKing/acompañamientosk/edit41.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                </div>
+  
+              </a>
+            </div>
+            <br>
+          <h1 id="subBk" class="mt-1 text-lg font-medium text-gray-900">Bebidas</h1><br>
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <a href="#" class="group" title="Fanta Naranja" onclick="agregarProducto('ftsKing/kingbebidas/edit50.png', 'Fanta Naranja', 8, 'Fanta naranja 600 ml', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/kingbebidas/edit50.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              
+           </a>
+           <a href="#" class="group" title="Coca Cola Sin Azucar" onclick="agregarProducto('ftsKing/kingbebidas/edit52.png', 'Coca Cola Sin Azucar', 8, 'Coca Cola Sin Azucar 600 ml', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/kingbebidas/edit52.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+
+            </a>
+          </a>
+          <a href="#" class="group" title="Coca Cola" onclick="agregarProducto('ftsKing/kingbebidas/edit53.png', 'Coca Cola', 8, 'Coca Cola 600 ml', event)">
+                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                  <img src="ftsKing/kingbebidas/edit53.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                </div>
+  
+              </a>
+              <a href="#" class="group" title="Fanta Papaya" onclick="agregarProducto('ftsKing/kingbebidas/edit54.png', 'Fanta Papaya', 8, 'Fanta Papaya 600 ml', event)">
+                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                  <img src="ftsKing/kingbebidas/edit54.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                </div>
+  
+              </a>
+              <a href="#" class="group" title="Jugo De Naranja" onclick="agregarProducto('ftsKing/kingbebidas/edit55.png', 'Jugo De Naranja', 10, 'Jugo De Naranja 600 ml', event)">
+                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                  <img src="ftsKing/kingbebidas/edit55.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                </div>
+  
+              </a>
+            </a>
+            <a href="#" class="group" title="Sprite" onclick="agregarProducto('ftsKing/kingbebidas/edit51.png', 'Sprite', 8, 'Sprite 600 ml', event)">
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="ftsKing/kingbebidas/edit51.png" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+
+            </a>
+            </div>
+          </div>
+            
+          <!-- More products... -->
+        </div>
+      
+      
       </div>
     </div>
   
@@ -189,45 +342,42 @@
       }
     </style>
   
-
-
-
-    <div class="bg-white">
+    <div  class="bg-white">
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">Products</h2>
+          <h2 class="sr-only">Productos</h2>
       
           <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <a href="#" class="group">
               <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                <img src="ftsRes/Burger.png" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
               </div>
-              <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
+              <h3 class="mt-4 text-sm text-gray-700">Desde Bs 16</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Burguer King</p>
+              <button  class="boton-ver-comercio" onclick="agregarAlCarrito(event)">Ver Comercio</button>
+             </a>
              <a href="#" class="group">
               <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                <img src="ftsRes/toby.png" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
               </div>
-              <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
+              <h3 class="mt-4 text-sm text-gray-700">Desde Bs 18</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Toby</p>
+              <button class="boton-ver-comercio" >Ver Comercio</button>
             </a>
             <a href="#" class="group">
               <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                <img src="ftsRes/krusty.png" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
               </div>
-              <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
+              <h3 class="mt-4 text-sm text-gray-700">Desde Bs 20</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Krosty Burguer</p>
+              <button class="boton-ver-comercio" >Ver Comercio</button>
             </a>
             <a href="#" class="group">
               <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                <img src="ftsRes/pedrini.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
               </div>
-              <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
+              <h3 class="mt-4 text-sm text-gray-700">Desde Bs 21</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Pedrini´s</p>
+              <button class="boton-ver-comercio" >Ver Comercio</button>
             </a>
       
             
@@ -237,191 +387,87 @@
     </div>
          
     <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">Products</h2>
-      
-          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-      
-            
-            <!-- More products... -->
-          </div>
-        </div>
-    </div>
-         
-    <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">Products</h2>
-      
-          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-      
-            
-            <!-- More products... -->
-          </div>
-        </div>
-    </div>
-         
-    <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">Products</h2>
-      
-          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-      
-            
-            <!-- More products... -->
-          </div>
-        </div>
-    </div>
-         
-    <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">Products</h2>
-      
-          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-            <a href="#" class="group">
-              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-              </div>
-              <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-              <button id="botonAñadircarrito" onclick="agregarAlCarrito(event)">Añadir al carrito</button>
-            </a>
-      
-            
-            <!-- More products... -->
-          </div>
-        </div>
-    </div>
-         
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="sr-only">Products</h2>
     
-  <script src="script.js"></script>
-       <!--  <div class="container">
-        <h1>Bienvenido a mi portafolio</h1>
-        <span>Hola, mi nombre es Paul Arteaga</span>
-        <p>Soy estudiante de Ing en Sistemas</p>
-        <P>Estoy en mi 6to semestre</P>
-        <hr>
-        <p>Vivo en Santa Cruz Bolivia</p>
-        <p>Mi numero es 63477466</p>
-        <a style="text-decoration: underline;" href="index.html">SALIR</a> -->
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <a href="#" class="group">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="ftsRes/pampeño.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
+            <button class="boton-ver-comercio" >Ver Comercio</button>
+          </a>
+           <a href="#" class="group">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+            <button class="boton-ver-comercio" >Ver Comercio</button>
+          </a>
+          <a href="#" class="group">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
+            <button class="boton-ver-comercio" >Ver Comercio</button>
+          </a>
+          <a href="#" class="group">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+            <button class="boton-ver-comercio" >Ver Comercio</button>
+          </a>
+    
+          
+          <!-- More products... -->
+        </div>
+      </div>
+  </div>
+  <script src="script.js"></script>  
+  <!-- Coloca este script al final del body antes del cierre -->
+
+<!-- <script>
+  function abrirVentana(imagenSrc, nombre, precio, descripcion) {
+      // Almacena la información en LocalStorage
+      localStorage.setItem('imagenSrc', imagenSrc);
+      localStorage.setItem('nombre', nombre);
+      localStorage.setItem('precio', precio);
+      localStorage.setItem('descripcion', descripcion);
+  
+      // Abre la ventana emergente
+      window.open('carrito.html', '_blank');
+  }
+  </script> -->
+
+  <script defer>
+    // Variable para almacenar los productos
+    var productos = [];
+  
+    /// Función para agregar un producto a la lista
+function agregarProducto(imagenSrc, nombre, precio, descripcion, event) {
+  // Agrega el producto a la lista
+  productos.push({ imagenSrc, nombre, precio, descripcion });
+
+  // Muestra la información del producto en la consola (puedes quitar esto en la versión final)
+  console.log(productos);
+
+  // Almacena la información en LocalStorage
+  localStorage.setItem('productos', JSON.stringify(productos));
+
+  // Evita la redirección predeterminada del enlace
+  if (event) {
+    event.preventDefault();
+  }
+}
+
+  </script>
+  
+
     </body>
 </html>

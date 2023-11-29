@@ -131,8 +131,51 @@ a#pedidos-link:hover {
     /* Estilos específicos para el nav en la página de inicio */
     margin-bottom: -100px; /* Ajusta según sea necesario */
 }
+ #menus {
+    
+    margin-top: -60px;
+ }
+ #popupContainer{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #01325a;
+ }
+ #totalContainer{
+    
+    text-align: right;
+   /*  margin-right: 20px; */
 
+ }
+ 
 #viewerButton {
-    margin-top: 80px; /* Ajusta según sea necesario */
+    margin-top: 8px; 
+    margin-bottom: -50px;
+  }
+   
+  .boton-ver-comercio {
+    background-color: #332f46;  /* Color de fondo normal */
+    color: rgb(255, 255, 255);  /* Color del texto */
+    padding: 10px 20px;  /* Ajusta según sea necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;  /* Agrega una transición para suavizar el cambio de color */
+    font-weight: bold;  /* Hace que la letra sea más gruesa */
   }
   
+  .boton-ver-comercio:hover {
+    background-color: #51426d;  /* Cambia el color de fondo al pasar el mouse */
+  }
+  #subBk {
+    background-color: rgb(107, 107, 107);  /* Color de fondo normal */
+    color: rgb(255, 255, 255);  /* Color del texto */
+    padding: 10px 20px;  /* Ajusta según sea necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;  /* Agrega una transición para suavizar el cambio de color */
+  }
+  
+  
+   
