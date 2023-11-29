@@ -9,27 +9,8 @@
         <link class="icon" rel="icon" href="jpgaicon.ico" type="image/x-icon">
         <title>pagina de optimizacion de datos</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    </head>
+         </head>
     <body>
-     
-
-
-
-
-
-
-
-
-
-        <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
 <div class="min-h-full">
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -38,23 +19,8 @@
             <div class="flex-shrink-0">
               <img class="h-8 w-8" src="sc.jpg" alt="Your Company">
             </div>
-            <div class="hidden md:block">
-
-              
-
-              <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                
-                
-                <!-- <a button id="mostrarBtn" onclick="toggleOpciones()" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Mostrar/Ocultar Opciones</a>
-
-                <div id="opciones" class="opciones">
-                  <button class="opcionBtn" onclick="irAMenuPrincipal()">Ir a Menú Principal</button>
-                  <button class="opcionBtn" onclick="irAConfigurar()">Ir a Configurar</button>
-                  <button class="opcionBtn" onclick="salir()">Salir</button>
-              </div> -->
+            <div class="hidden md:block">  <div class="ml-10 flex items-baseline space-x-4">
               <a id="mostrarBtn" onclick="toggleOpciones()" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">MAS OPCIONES</a>
-
               <div id="opcionesContainer" class="opciones-container">
                   <div id="opciones" class="opciones">
                       <button class="opcionBtn" onclick="irAMenuPrincipal()">Ir a Menú Principal</button>
@@ -62,9 +28,6 @@
                       <button class="opcionBtn" onclick="salir()">Salir</button>
                   </div>
               </div>
-
-
-
               <a href="tienda.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">TIENDA</a>
               <a href="carrito.html" id="carrito-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CARRITO</a>
               <a href="compras.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">MIS COMPRAS</a>
@@ -81,7 +44,6 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                 </svg>
               </button>
-  
               <!-- Profile dropdown -->
               <div class="relative ml-3">
                 <div>
@@ -91,37 +53,152 @@
                     <img class="h-8 w-8 rounded-full" src="santa cruz.jpg" alt="">
                   </button>
                 </div>
-  
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-  
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-                
               </div>
             </div>
           </div>
-          
     </nav>
+    <ul role="list" class="divide-y divide-gray-100">
+      <li id="productoContainer" class="flex justify-between gap-x-6 py-5">
+        <div class="flex min-w-0 gap-x-4">
+          <img id="imagenProducto" class="h-12 w-12 flex-none rounded-full bg-gray-50" alt="">
+          <div class="min-w-0 flex-auto">
+            <p id="nombreProducto" class="text-sm font-semibold leading-6 text-gray-900"></p>
+            <p id="descripcionProducto" class="mt-1 truncate text-xs leading-5 text-gray-500"></p>
+          </div>
+        </div>
+        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <p id="precioProducto" class="text-sm leading-6 text-gray-900"></p>
+          <p id="eliminarProducto" onclick="eliminarProducto()">Eliminar</p>
+        </div>
+      </li>
+    </ul>
+<!-- Total y botón de pagar -->
+<div id="totalContainer" class="mt-5">
+  <p>Total: <span id="total"></span></p>
+  <button onclick="realizarPago()">Pagar</button>
+</div>
+
+    
 
 
 
 
 
-
-
-
-
-
+   
   
+    <!-- <script>
+      // Función para mostrar la información del producto
+      function mostrarProducto() {
+        // Lee la información del LocalStorage
+        var imagenSrc = localStorage.getItem('imagenSrc');
+        var nombre = localStorage.getItem('nombre');
+        var precio = localStorage.getItem('precio');
+        var descripcion = localStorage.getItem('descripcion');
+  
+        // Asigna la información a los elementos en puevas.html
+        document.getElementById('imagenProducto').src = imagenSrc;
+        document.getElementById('nombreProducto').innerText = nombre;
+        document.getElementById('descripcionProducto').innerText = descripcion;
+        document.getElementById('precioProducto').innerText = 'Precio: $' + precio;
+  
+        // Muestra el contenedor con el ID productoContainer
+        document.getElementById('productoContainer').style.display = 'flex';
+      }
+  
+      // Función para eliminar el producto de la lista
+      function eliminarProducto() {
+        // Puedes agregar aquí el código para eliminar el producto de la lista
+        // En este ejemplo, simplemente ocultamos el contenedor
+        document.getElementById('productoContainer').style.display = 'none';
+      }
+  
+      // Muestra la información del producto cuando la página ha cargado
+      document.addEventListener('DOMContentLoaded', function () {
+        mostrarProducto();
+      });
+    </script> -->
 
-
-
+    <script>
+      // Función para calcular el total de los productos
+      function calcularTotal() {
+        var productos = JSON.parse(localStorage.getItem('productos'));
+        var total = 0;
+  
+        if (productos) {
+          productos.forEach(function (producto) {
+            total += producto.precio;
+          });
+        }
+  
+        return total;
+      }
+  
+      // Función para mostrar la información de todos los productos y el total
+      function mostrarProductos() {
+        var productos = JSON.parse(localStorage.getItem('productos'));
+        var productosList = document.querySelector('.divide-y.divide-gray-100');
+        var totalContainer = document.getElementById('totalContainer');
+        var totalElement = document.getElementById('total');
+  
+        productosList.innerHTML = '';
+  
+        if (productos && productos.length > 0) {
+          productos.forEach(function (producto) {
+            // Crea elementos para mostrar la información del producto
+            var productoContainer = document.createElement('li');
+            productoContainer.className = 'flex justify-between gap-x-6 py-5';
+  
+            var contenidoProducto = `
+              <div class="flex min-w-0 gap-x-4">
+                <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="${producto.imagenSrc}" alt="">
+                <div class="min-w-0 flex-auto">
+                  <p class="text-sm font-semibold leading-6 text-gray-900">${producto.nombre}</p>
+                  <p class="mt-1 truncate text-xs leading-5 text-gray-500">${producto.descripcion}</p>
+                </div>
+              </div>
+              <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                <p class="text-sm leading-6 text-gray-900">Precio: $${producto.precio}</p>
+                <p onclick="eliminarProducto(${productos.indexOf(producto)})" style="cursor: pointer; color: red;">Eliminar</p>
+              </div>
+            `;
+  
+            // Agrega el contenido al contenedor del producto
+            productoContainer.innerHTML = contenidoProducto;
+  
+            // Agrega el contenedor del producto a la lista
+            productosList.appendChild(productoContainer);
+          });
+  
+          // Muestra el total y el botón de pagar
+          totalElement.textContent = `$${calcularTotal()}`;
+          totalContainer.style.display = 'block';
+        } else {
+          // Si no hay productos, oculta el total y el botón de pagar
+          totalContainer.style.display = 'none';
+        }
+      }
+  
+      // Función para eliminar un producto de la lista
+      function eliminarProducto(index) {
+        var productos = JSON.parse(localStorage.getItem('productos'));
+        productos.splice(index, 1);
+        localStorage.setItem('productos', JSON.stringify(productos));
+        mostrarProductos();
+      }
+  
+      // Función para realizar el pago (puedes personalizar según tus necesidades)
+      function realizarPago() {
+        alert('¡Pago realizado con éxito!');
+        // Aquí podrías agregar lógica adicional para procesar el pago
+      }
+  
+      // Muestra la información de los productos cuando la página ha cargado
+      document.addEventListener('DOMContentLoaded', function () {
+        mostrarProductos();
+      });
+    </script>
+  </body>
+  </html>
 
 
 
@@ -134,221 +211,6 @@
 
 
     
-
-  
-    <!-- component -->
-<div class="mx-auto container px-4 md:px-6 2xl:px-0 py-12 flex justify-center items-center">
-  <!-- - more free and premium Tailwind CSS components at https://tailwinduikit.com/ - -->
-  <div class="flex flex-col jusitfy-start items-start">
-    <div>
-      <p class="text-sm leading-4 text-gray-600 dark:text-white">Home</p>
-    </div>
-    <div class="mt-3">
-      <h1 class="text-3xl lg:text-4xl tracking-tight font-semibold leading-8 lg:leading-9 text-gray-800 dark:text-white dark:text-white">Favourites</h1>
-    </div>
-    <div class="mt-4">
-      <p class="text-2xl tracking-tight leading-6 text-gray-600 dark:text-white">03 items</p>
-    </div>
-    <div class="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-10 lg:gap-y-0">
-      <div class="flex flex-col">
-        <div class="relative">
-          <img class="hidden lg:block" src="https://i.ibb.co/SsmkhPq/Rectangle-23.png" alt="bag" />
-          <img class="hidden sm:block lg:hidden" src="https://i.ibb.co/ZH9FmZL/Rectangle-23-1.png" alt="bag" />
-          <img class="sm:hidden" src="https://i.ibb.co/cyN26yn/Rectangle-23.png" alt="bag" />
-          <button aria-label="close" class="top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 absolute p-1.5 bg-gray-800 dark:bg-white dark:text-gray-800 text-white hover:text-gray-400">
-            <svg class="fil-current" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 1L1 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M1 1L13 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flex justify-between items-center">
-          <div class="flex justify-center items-center">
-            <p class="tracking-tight text-2xl font-semibold leading-6 text-gray-800 dark:text-white">New York Streak</p>
-          </div>
-          <div class="flex justify-center items-center">
-            <button aria-label="show menu" onclick="handleClick1(true)" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2.5 px-2 bg-gray-800 dark:bg-white dark:text-gray-800 text-white hover:text-gray-400 hover:bg-gray-200">
-              <svg id="chevronUp1" class="fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5L5 1L1 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <svg id="chevronDown1" class="hidden fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="menu1" class="flex flex-col jusitfy-start items-start mt-12">
-          <div>
-            <p class="tracking-tight text-xs leading-3 text-gray-800 dark:text-white">MK617</p>
-          </div>
-          <div class="mt-2">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">Beige brown</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">42 size</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">$1,000</p>
-          </div>
-          <div class="flex jusitfy-between flex-col lg:flex-row items-center mt-10 w-full space-y-4 lg:space-y-0 lg:space-x-4 xl:space-x-8">
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-gray-800 dark:text-white text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-gray-300 hover:text-gray-800 dark:text-white dark:bg-transparent dark:border-white dark:hover:bg-gray-800 bg-white border border-gray-800 dark:hover:text-white">More information</button>
-            </div>
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-black bg-gray-800 border border-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col">
-        <div class="relative">
-          <img class="hidden lg:block" src="https://i.ibb.co/WVySXBL/Rectangle-24.png" alt="watch" />
-          <img class="hidden sm:block lg:hidden" src="https://i.ibb.co/9sqGrR6/Rectangle-24-1.png" alt="watch" />
-          <img class="sm:hidden" src="https://i.ibb.co/wCGrdFt/Rectangle-24.png" alt="watch" />
-          <button aria-label="close" class="top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 dark:bg-white dark:text-gray-800 absolute p-1.5 bg-gray-800 text-white hover:text-gray-400">
-            <svg class="fil-current" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 1L1 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M1 1L13 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flex justify-between items-center">
-          <div class="flex justify-center items-center">
-            <p class="tracking-tight text-2xl font-semibold leading-6 text-gray-800 dark:text-white">Luxe 3 series</p>
-          </div>
-          <div class="flex justify-center items-center">
-            <button aria-label="show menu" onclick="handleClick2(true)" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2.5 px-2 bg-gray-800 dark:bg-white dark:text-gray-800 text-white hover:text-gray-400 hover:bg-gray-200">
-              <svg id="chevronUp2" class="hidden fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5L5 1L1 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <svg id="chevronDown2" class="fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="menu2" class="hidden flex flex-col jusitfy-start items-start mt-12">
-          <div>
-            <p class="tracking-tight text-xs leading-3 text-gray-800 dark:text-white">MK617</p>
-          </div>
-          <div class="mt-2">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">Beige brown</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">42 size</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">$1,000</p>
-          </div>
-          <div class="flex jusitfy-between flex-col lg:flex-row items-center mt-10 w-full space-y-4 lg:space-y-0 lg:space-x-4 xl:space-x-8">
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-gray-800 dark:text-white text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-gray-300 hover:text-gray-800 dark:text-white bg-white border border-gray-800 dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-gray-800 dark:hover:text-white">More information</button>
-            </div>
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-black bg-gray-800 border border-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col">
-        <div class="relative">
-          <img class="hidden lg:block" src="https://i.ibb.co/JqD4MwR/Rectangle-5.png" alt="shoes" />
-          <img class="hidden sm:block lg:hidden" src="https://i.ibb.co/MG7JYJ4/Rectangle-5-1.png" alt="shoes" />
-          <img class="sm:hidden" src="https://i.ibb.co/89gMng3/Rectangle-5.png" alt="shoes" />
-          <button aria-label="close" class="top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-gray-800 focus:ring-gray-800 absolute p-1.5 bg-gray-800 text-white hover:text-gray-400">
-            <svg class="fil-current" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 1L1 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M1 1L13 13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flex justify-between items-center">
-          <div class="flex justify-center items-center">
-            <p class="tracking-tight text-2xl font-semibold leading-6 text-gray-800 dark:text-white">EZ sneakers</p>
-          </div>
-          <div class="flex justify-center items-center">
-            <button aria-label="show menu" onclick="handleClick3(true)" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2.5 px-2 bg-gray-800 text-white hover:text-gray-400 dark:bg-gray-50 dark:text-gray-900 hover:bg-gray-200">
-              <svg id="chevronUp3" class="hidden fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5L5 1L1 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <svg id="chevronDown3" class="fill-stroke" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="menu3" class="hidden flex flex-col jusitfy-start items-start mt-12">
-          <div>
-            <p class="tracking-tight text-xs leading-3 text-gray-800 dark:text-white">MK617</p>
-          </div>
-          <div class="mt-2">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">Beige brown</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">42 size</p>
-          </div>
-          <div class="mt-6">
-            <p class="tracking-tight text-base font-medium leading-4 text-gray-800 dark:text-white">$1,000</p>
-          </div>
-          <div class="flex jusitfy-between flex-col lg:flex-row items-center mt-10 w-full space-y-4 lg:space-y-0 lg:space-x-4 xl:space-x-8">
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-gray-800 dark:text-white text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-gray-300 hover:text-gray-800 dark:text-white bg-white border border-gray-800 dark:bg-transparent dark:text-white dark:border-white dark:hover:bg-gray-800 dark:hover:text-white">More information</button>
-            </div>
-            <div class="w-full">
-              <button class="focus:outline-none focus:ring-gray-800 focus:ring-offset-2 focus:ring-2 text-white w-full tracking-tight py-4 text-lg leading-4 hover:bg-black bg-gray-800 border border-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-// more free and premium Tailwind CSS components at https://tailwinduikit.com/
-handleClick1 = (flag) => {
-  let icon = document.getElementById("chevronDown1");
-  let icon2 = document.getElementById("chevronUp1");
-  let menu = document.getElementById("menu1");
-  if (flag) {
-    menu.classList.toggle("hidden");
-    icon.classList.toggle("hidden");
-    icon2.classList.toggle("hidden");
-  }
-};
-
-handleClick2 = (flag) => {
-  let icon = document.getElementById("chevronDown2");
-  let icon2 = document.getElementById("chevronUp2");
-  let menu = document.getElementById("menu2");
-  if (flag) {
-    menu.classList.toggle("hidden");
-    icon.classList.toggle("hidden");
-    icon2.classList.toggle("hidden");
-  }
-};
-
-handleClick3 = (flag) => {
-  let icon = document.getElementById("chevronDown3");
-  let icon2 = document.getElementById("chevronUp3");
-  let menu = document.getElementById("menu3");
-  if (flag) {
-    menu.classList.toggle("hidden");
-    icon.classList.toggle("hidden");
-    icon2.classList.toggle("hidden");
-  }
-};
-</script>
   <script src="script.js"></script>
-       <!--  <div class="container">
-        <h1>Bienvenido a mi portafolio</h1>
-        <span>Hola, mi nombre es Paul Arteaga</span>
-        <p>Soy estudiante de Ing en Sistemas</p>
-        <P>Estoy en mi 6to semestre</P>
-        <hr>
-        <p>Vivo en Santa Cruz Bolivia</p>
-        <p>Mi numero es 63477466</p>
-        <a style="text-decoration: underline;" href="index.html">SALIR</a> -->
     </body>
 </html>
