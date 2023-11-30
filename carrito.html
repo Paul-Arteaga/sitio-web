@@ -6,7 +6,7 @@
         content="width=deviece-width",
         initial-scale="1.0">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <link class="icon" rel="icon" href="jpgaicon.ico" type="image/x-icon">
+        <link rel="icon" href="jpgaicon.ico" type="image/x-icon">
         <title>pagina de optimizacion de datos</title>
         <script src="https://cdn.tailwindcss.com"></script>
          </head>
@@ -77,46 +77,6 @@
   <p>Total: <span id="total"></span></p>
   <button onclick="realizarCompra()">Pagar</button>
 </div>
-
-    
-
-
-
-
-
-   
-  
-    <!-- <script>
-      // Función para mostrar la información del producto
-      function mostrarProducto() {
-        // Lee la información del LocalStorage
-        var imagenSrc = localStorage.getItem('imagenSrc');
-        var nombre = localStorage.getItem('nombre');
-        var precio = localStorage.getItem('precio');
-        var descripcion = localStorage.getItem('descripcion');
-  
-        // Asigna la información a los elementos en puevas.html
-        document.getElementById('imagenProducto').src = imagenSrc;
-        document.getElementById('nombreProducto').innerText = nombre;
-        document.getElementById('descripcionProducto').innerText = descripcion;
-        document.getElementById('precioProducto').innerText = 'Precio: $' + precio;
-  
-        // Muestra el contenedor con el ID productoContainer
-        document.getElementById('productoContainer').style.display = 'flex';
-      }
-  
-      // Función para eliminar el producto de la lista
-      function eliminarProducto() {
-        // Puedes agregar aquí el código para eliminar el producto de la lista
-        // En este ejemplo, simplemente ocultamos el contenedor
-        document.getElementById('productoContainer').style.display = 'none';
-      }
-  
-      // Muestra la información del producto cuando la página ha cargado
-      document.addEventListener('DOMContentLoaded', function () {
-        mostrarProducto();
-      });
-    </script> -->
 
     <script>
       // Función para calcular el total de los productos
@@ -199,13 +159,6 @@
     </script>
 
 
-
-
-
-
-
-
-
   <!-- Agregar al final de carrito.html -->
 
 
@@ -219,21 +172,9 @@
 
     // Redirige a la página de pedidos.html
     /* window.location.href = 'pedidosD.html'; */
+    window.postMessage({ type: 'realizarCompra', productos }, '*');
   }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-    
   <script src="script.js"></script>
     </body>
 </html>
