@@ -8,7 +8,7 @@
 <body>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-    <dotlottie-player src="https://lottie.host/b879dbab-ca77-484f-999e-d98ff5e0553c/Bwj1ZNrgl5.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+  <dotlottie-player src="https://lottie.host/b879dbab-ca77-484f-999e-d98ff5e0553c/Bwj1ZNrgl5.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
     
   <!-- Contenedor para mostrar productos en pedidos.html -->
   <ul role="list" class="divide-y divide-gray-100" id="pedidosList"></ul>
@@ -53,6 +53,21 @@
     document.addEventListener('DOMContentLoaded', function () {
       mostrarPedidos();
     });
+
+    // Escucha los mensajes provenientes de otras ventanas
+    window.addEventListener('message', function (event) {
+      // Verifica el tipo de mensaje
+      if (event.data && event.data.type === 'realizarCompra') {
+        // Maneja el mensaje y accede a los productos
+        var productosEnEspera = event.data.productos;
+        console.log('Productos en espera:', productosEnEspera);
+
+        // Puedes realizar más acciones aquí con los productos recibidos
+        // Por ejemplo, podrías agregarlos a localStorage o mostrarlos en la página
+        mostrarPedidos();
+      }
+    });
   </script>
 </body>
 </html>
+
