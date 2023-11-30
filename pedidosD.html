@@ -6,47 +6,75 @@
   <title>Pedidos</title>
 </head>
 <body>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-
-  <dotlottie-player src="https://lottie.host/b879dbab-ca77-484f-999e-d98ff5e0553c/Bwj1ZNrgl5.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
-    
   <!-- Contenedor para mostrar productos en pedidos.html -->
-  <ul role="list" class="divide-y divide-gray-100" id="pedidosList"></ul>
+  <div id="contenidoPedidos">
+    <div id="esperandoPedido" style="display: none; text-align: center;">Esperando pedidos...</div>
+    <ul role="list" class="divide-y divide-gray-100" id="pedidosList"></ul>
+  </div>
+
+  <!-- Botón "Entregar pedido" -->
+  <button id="entregarPedidoButton" style="display: none;" onclick="entregarPedido()">Entregar pedido</button>
 
   <script>
     // Función para mostrar la información de los productos en pedidos.html
     function mostrarPedidos() {
       var productos = JSON.parse(localStorage.getItem('productosEnEspera'));
       var pedidosList = document.getElementById('pedidosList');
+      var esperandoPedido = document.getElementById('esperandoPedido');
+      var entregarPedidoButton = document.getElementById('entregarPedidoButton');
+
+      // Si no hay productos, mostrar "Esperando pedido..."
+      if (!productos || productos.length === 0) {
+        esperandoPedido.style.display = 'block';
+        pedidosList.style.display = 'none';
+        entregarPedidoButton.style.display = 'none';
+        return;
+      }
+
+      esperandoPedido.style.display = 'none';
+      pedidosList.style.display = 'block';
 
       pedidosList.innerHTML = '';
 
-      if (productos && productos.length > 0) {
-        productos.forEach(function (producto) {
-          // Crea elementos para mostrar la información del producto
-          var productoContainer = document.createElement('li');
-          productoContainer.className = 'flex justify-between gap-x-6 py-5';
+      productos.forEach(function (producto) {
+        // Crea elementos para mostrar la información del producto
+        var productoContainer = document.createElement('li');
+        productoContainer.className = 'flex justify-between gap-x-6 py-5';
 
-          var contenidoProducto = `
-            <div class="flex min-w-0 gap-x-4">
-              <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="${producto.imagenSrc}" alt="">
-              <div class="min-w-0 flex-auto">
-                <p class="text-sm font-semibold leading-6 text-gray-900">${producto.nombre}</p>
-                <p class="mt-1 truncate text-xs leading-5 text-gray-500">${producto.descripcion}</p>
-              </div>
+        var contenidoProducto = `
+          <div class="flex min-w-0 gap-x-4">
+            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="${producto.imagenSrc}" alt="">
+            <div class="min-w-0 flex-auto">
+              <p class="text-sm font-semibold leading-6 text-gray-900">${producto.nombre}</p>
+              <p class="mt-1 truncate text-xs leading-5 text-gray-500">${producto.descripcion}</p>
             </div>
-            <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-              <p class="text-sm leading-6 text-gray-900">Precio: $${producto.precio}</p>
-            </div>
-          `;
+          </div>
+          <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p class="text-sm leading-6 text-gray-900">Precio: $${producto.precio}</p>
+          </div>
+        `;
 
-          // Agrega el contenido al contenedor del producto
-          productoContainer.innerHTML = contenidoProducto;
+        // Agrega el contenido al contenedor del producto
+        productoContainer.innerHTML = contenidoProducto;
 
-          // Agrega el contenedor del producto a la lista
-          pedidosList.appendChild(productoContainer);
-        });
-      }
+        // Agrega el contenedor del producto a la lista
+        pedidosList.appendChild(productoContainer);
+      });
+
+      // Mostrar el botón "Entregar pedido" cuando haya productos
+      entregarPedidoButton.style.display = 'block';
+    }
+
+    // Función para entregar el pedido
+    function entregarPedido() {
+      // Mostrar alerta
+      alert('Pedido entregado');
+
+      // Eliminar productos en espera
+      localStorage.removeItem('productosEnEspera');
+
+      // Actualizar la lista de pedidos mostrada en la página
+      mostrarPedidos();
     }
 
     // Muestra la información de los productos cuando la página ha cargado
@@ -70,4 +98,6 @@
   </script>
 </body>
 </html>
+
+
 
