@@ -75,7 +75,7 @@
 <!-- Total y botón de pagar -->
 <div id="totalContainer" class="mt-5">
   <p>Total: <span id="total"></span></p>
-  <button onclick="realizarPago()">Pagar</button>
+  <button onclick="realizarCompra()">Pagar</button>
 </div>
 
     
@@ -187,18 +187,41 @@
       }
   
       // Función para realizar el pago (puedes personalizar según tus necesidades)
-      function realizarPago() {
-        alert('¡Pago realizado con éxito!');
+      //function realizarPago() {
+        //alert('¡Pago realizado con éxito!');
         // Aquí podrías agregar lógica adicional para procesar el pago
-      }
+      //}
   
       // Muestra la información de los productos cuando la página ha cargado
       document.addEventListener('DOMContentLoaded', function () {
         mostrarProductos();
       });
     </script>
-  </body>
-  </html>
+
+
+
+
+
+
+
+
+
+  <!-- Agregar al final de carrito.html -->
+
+
+<script>
+  function realizarCompra() {
+    var productos = JSON.parse(localStorage.getItem('productos'));
+
+    // Almacena los productos en el LocalStorage con una nueva clave
+    localStorage.setItem('productosEnEspera', JSON.stringify(productos));
+    alert('¡Pago realizado con éxito!');
+
+    // Redirige a la página de pedidos.html
+    /* window.location.href = 'pedidosD.html'; */
+  }
+</script>
+
 
 
 
