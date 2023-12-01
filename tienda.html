@@ -9,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <title>pagina de optimizacion de datos</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  
     </head>
     <body>
 <div class="min-h-full">
@@ -122,14 +124,7 @@
             <h1  class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Burguer king</h1>
             <p class="text-base leading-normal text-gray-600 dark:text-white mt-2">Una nueva y extremadamente deliciosa hamburguesa de la colección The Kings</p>
             <p id="productPrice" class="text-3xl font-medium text-gray-600 dark:text-white mt-8 md:mt-10"></p>
-            <div class="flex items-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8 mt-8 md:mt-16">
-              <button class="w-full md:w-3/5 border border-gray-800 text-base font-medium leading-none text-white uppercase py-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 text-white dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">Add to Cart</button>
-              <button class="w-full md:w-2/5 border border-gray-800 text-base font-medium leading-none text-gray-800 dark:text-white uppercase py-6 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-transparent dark:border-white dark:text-white focus:ring-gray-800 hover:bg-gray-800 hover:text-white dark:hover:bg-gray-800 ">View Details</button>
-            </div>
             
-            <div class="mt-6">
-              <button class="text-xl underline text-gray-800 dark:text-white dark:hover:text-gray-200 capitalize hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">Add to Wishlist</button>
-            </div>
           </div>
         </div>
           <br>
@@ -430,21 +425,7 @@
       </div>
   </div>
   <script src="script.js"></script>  
-  <!-- Coloca este script al final del body antes del cierre -->
-
-<!-- <script>
-  function abrirVentana(imagenSrc, nombre, precio, descripcion) {
-      // Almacena la información en LocalStorage
-      localStorage.setItem('imagenSrc', imagenSrc);
-      localStorage.setItem('nombre', nombre);
-      localStorage.setItem('precio', precio);
-      localStorage.setItem('descripcion', descripcion);
   
-      // Abre la ventana emergente
-      window.open('carrito.html', '_blank');
-  }
-  </script> -->
-
   <script defer>
     // Variable para almacenar los productos
     var productos = [];
